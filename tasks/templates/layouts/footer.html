@@ -1,0 +1,31 @@
+
+<section class="my-footer">
+    <footer class="text-center font-color2 bg-dark2">
+      <div class="container p-4 pb-0">
+        <section class="">
+          <p class="d-flex justify-content-center align-items-center">
+            {% if user.is_authenticated %}
+                <span class="me-3">Create tasks for free</span>
+                <a href="{% url 'create_task' %}">
+                    <button data-mdb-ripple-init type="button" class="btn btn-outline-light">
+                        Create!
+                    </button>
+                </a>
+            {% else %}
+                <span class="me-3">Register for free</span>
+                <a href="{% url 'signup' %}">
+                    <button data-mdb-ripple-init type="button" class="btn btn-outline-light">
+                        Sign up!
+                    </button>
+                </a>
+            {% endif %}
+          </p>
+        </section>
+      </div>
+
+      <div class="text-center p-3 bg-dark font-color2">
+        © 2024 Copyright:
+        <a class="font-color" href="/">NoteHub.com</a>
+      </div>
+    </footer> 
+  </section>

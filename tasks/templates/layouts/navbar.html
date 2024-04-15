@@ -1,0 +1,50 @@
+{% load static %}
+
+<nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+    <div class="container-fluid navbar-conteiner">
+
+      <a href="/"><img style="width: 55px!important;" class="img" src="{% static 'tasks.png' %}" alt=""></a>
+      <a class="font-color2 navbar-brand " href="/">NoteHub</a>
+      
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="/">Home</a>
+          </li>
+          {% if user.is_authenticated == False %}
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'tasks' %}">Tasks</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'create_task' %}">Create task</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link font-color" href="{% url 'signup' %}">Signup</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link font-color" href="{% url 'signin' %}">Login</a>
+          </li>
+
+          {% else %}
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle font-color" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Tasks
+            </a>
+            <ul class="dropdown-menu bg-dark">
+              <li><a class="dropdown-item" href="{% url 'tasks' %}">Tasks pending</a></li>
+              <li><a class="dropdown-item" href="{% url 'tasks_completed' %}">Tasks completed</a></li>
+              <li><a class="dropdown-item" href="{% url 'create_task' %}">Create task</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link font-color" href="{% url 'logout' %}">Logout</a>
+          </li>
+          {% endif %}
+        </ul>
+      </div>
+    </div>
+  </nav>
+

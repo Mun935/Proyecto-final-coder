@@ -1,0 +1,176 @@
+
+/* general */
+
+body  {
+    background-color: rgb(94, 59, 128);
+    color: #c9c9c9;
+    position: relative;
+    min-height: 100vh;
+    padding-bottom: 170px;
+}
+
+.font-color{
+    color: rgb(156,156,156);
+}
+
+.font-color:hover{
+    color: rgb(200,200,200);
+}
+
+.font-color2{
+    color: rgb(156,156,156);
+}
+
+
+a {
+    text-decoration: none;
+    color: rgb(156,156,156);
+}
+
+/* navbar */
+
+.navbar-conteiner {
+    padding: 0 80px!important;
+}
+
+
+.navbar-brand:focus, .navbar-brand:hover {
+    color: rgb(156,156,156);;
+}
+
+@media (max-width:700px){
+    .navbar-conteiner {
+        padding: 0 30px!important;
+    }
+}
+
+.dropdown-menu {
+    --bs-dropdown-link-color: #c9c9c9;
+    --bs-dropdown-link-hover-color: rgb(255, 255, 255);
+    --bs-dropdown-link-hover-bg: rgb(44, 49, 54);
+    --bs-dropdown-link-active-color: #fff;
+    --bs-dropdown-link-active-bg: rgb(30, 30, 30);
+}
+
+.img {
+    width: 55px!important;
+}
+
+/* footer */
+
+.bg-dark2 {
+    background-color: rgb(44, 49, 54);
+}
+
+.my-footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.btn-outline-light {
+    border: 2px solid rgb(94, 59, 128);
+    --bs-btn-color: #c9c9c9;
+    --bs-btn-hover-color: #000;
+    --bs-btn-hover-bg: rgb(94, 59, 128);
+    --bs-btn-hover-border-color: rgb(94, 59, 128);
+    --bs-btn-focus-shadow-rgb: 248, 249, 250;
+    --bs-btn-active-color: #c9c9c9;
+    --bs-btn-active-bg: rgb(135, 82, 165);
+    --bs-btn-active-border-color: rgb(135, 82, 165);
+    --bs-gradient: none;
+    font-weight: 600;
+}
+
+.btn-outline-light a:hover {
+    color: #000
+}
+
+.btn-outline-light a:active {
+    color: #cccccc
+}
+
+
+/* home */
+
+.contenedor1 {
+    margin: 0 auto;
+}
+
+.final {
+    margin: 0;
+}
+
+/* signup */
+
+.signup {
+    padding-top: 80px;
+    
+}
+
+.signug-form {
+    width: 500px;
+    margin: 0 auto;
+    
+}
+
+.signug-form-2 {
+    padding: 40px;
+    padding-bottom: 25px;
+}
+
+.p-signup {
+    margin-bottom: 0;
+    margin-top: 15px;
+}
+
+/* create task */
+
+.create_task {
+    padding-top: 40px;
+    
+}
+
+.create_task-form {
+    width: 600px;
+    margin: 0 auto;
+    
+}
+
+.create_task-form-2 {
+    padding: 40px;
+    padding-bottom: 25px;
+}
+
+.card {
+    background-color: rgb(139, 87, 190);
+    border-color: rgb(139, 87, 190);
+
+}
+
+/* tasks */
+
+.edit {
+
+    font-weight: 600;
+}
+
+.btn-outline-danger, .btn-outline-success {
+    color: #c9c9c9;
+    font-weight: 600;
+    width: 225px;
+}
+
+@media (max-width:700px){
+    .list-group {
+        min-width: 97.9%;
+        margin: 0;
+    }
+    .mx-auto {
+        margin-right: 0 !important;
+        margin-left: 0 !important;
+    }
+    .btn-outline-danger, .btn-outline-success {
+        width: 150px;
+    }
+}

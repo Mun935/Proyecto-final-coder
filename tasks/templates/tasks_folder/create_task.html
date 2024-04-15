@@ -1,0 +1,35 @@
+{% extends 'layouts/layout.html' %}
+
+{% block content %}
+    <main class="create_task container">
+        <h1 class="text-center">Create a new task</h1>
+        <div class="row">
+            <div class="create_task-form">
+                <form action="" method="POST" class="bg-custom create_task-form-2 card card-body">
+                    
+                    {% csrf_token %}
+                    <div class="mb-3">
+                        <label for="title">Title:</label>
+                        <input type="text" name="title" id="title" class="form-control" placeholder="Write your title" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="description">Description:</label>
+                        <textarea style="min-height: 120px;" type="text" name="description" id="description" class="form-control" placeholder="Choose a description"></textarea>
+                    </div> 
+                    <div class="mb-3">
+                        <label for="important">Important:</label>
+                        <input type="checkbox" name="important" >
+                    </div>
+                    
+
+                    <button class="btn btn-outline-light">
+                        Save
+                    </button>
+                    <p class="p-signup">{{error}}</p>
+
+                </form>
+            </div>
+        </div>
+    </main>
+
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends 'layouts/layout.html' %}
+
+{% block content %}
+
+<main class="signup container">
+    <div class="row">
+        <div class="signug-form">
+            <form action="" method="POST" class="bg-dark signug-form-2 card card-body">
+                <h1 class="text-center">Login</h1>
+                {% csrf_token %}
+                <div class="mb-3">
+                    <label for="username">Username:</label>
+                    <input type="text" name="username" id="username" class="form-control" placeholder="Write your username">
+                </div>
+                <div class="mb-3">
+                    <label for="password">Password:</label>
+                    <input type="password" name="password" id="password" class="form-control" placeholder="Write your password">
+                </div>
+                
+                <button class="btn btn-outline-light">
+                    Sign in
+                </button>
+                <p class="p-signup">{{error}}</p>
+            </form>
+            <p class="text-center p-3 font-color2" style="font-size: large; font-weight: 400;">You don't have an account yet? <a style=" font-weight: 600;" class="font-color " href="{% url 'signup' %}">Sign up</a></p>
+            
+        </div>
+    </div>
+</main>
+
+{% endblock %}

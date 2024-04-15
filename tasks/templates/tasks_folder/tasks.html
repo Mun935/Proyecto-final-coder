@@ -1,0 +1,39 @@
+{% extends 'layouts/layout.html' %}
+
+{% block content %}
+<div class="container">
+    <h1 class="text-center pt-4">{{title}}</h1>
+  
+    <ul class="list-group list-group-flush mx-auto" style="width: 80%;">
+      {% for task in tasks %}
+        <li class="list-group p-2 m-2 bg-dark">
+          
+            <div class="text-white bg-dark list-group-item mb-3 d-flex justify-content-between align-items-center" style="border: none;">
+              <h2>Title: {{task.title}}</h2>
+              <h6>{{task.user}}</h6>
+            </div>
+            
+            <p class="text-white bg-dark list-group-item mb-3 d-flex justify-content-between align-items-center" style="border: none;">Description: {{task.description}}</p>
+
+            <div class="text-white bg-dark list-group-item mb-3 d-flex justify-content-between align-items-center" style="border: none;">
+                <p class="m-0">
+                    {% if task.important %}
+                      important: ✔️
+                    {% else %}
+                      important: ❌
+                    {% endif %}
+                  </p>
+                  <a class="edit text-white " href="{% url 'task_details' task.id %}">Edit</a>
+            </div>
+            
+            {% if task.datecompleted != null %}
+            <p class="text-white bg-dark list-group-item mb-3 d-flex justify-content-between align-items-center" style="border: none;">Date completed: {{task.datecompleted|date:'M j Y'}}</p>
+            {% endif %}
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+
+
+{% endblock %}
