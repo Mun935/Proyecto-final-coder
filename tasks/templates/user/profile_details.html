@@ -1,0 +1,20 @@
+{% extends 'layouts/layout.html' %}
+{% block content %}
+<main class="container mt-5" style="max-width: 900px;">
+    <div class="card card-body">
+        
+        <h2>Profile Details</h2>
+        <ul>
+            <li><strong>Username:</strong> {{ user.username }}</li>
+            <li><strong>Email:</strong> {{ user.email }}</li>
+            
+            {% if user.profile.avatar %}
+                <li><strong>Avatar:</strong></li> 
+                <img style="width: 200px; height: 200px; border-radius: 10px;" src="{{ user.profile.avatar.url }}" alt="Avatar">
+            {% endif %}
+            
+        </ul>
+        <a href="{% url 'profile' %}" class="btn btn-outline-light">Edit Profile</a>
+    </div>
+</main>
+  {% endblock %}

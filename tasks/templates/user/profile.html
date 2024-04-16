@@ -1,0 +1,40 @@
+{% extends 'layouts/layout.html' %}
+
+{% block content %}
+<main class="container mt-5" style="max-width: 500px;">
+  
+  <form method="POST" class="card card-body" enctype="multipart/form-data">
+    <h2>Edit your profile</h2>
+    {% csrf_token %}
+    <div class="formulario1" style="display: none;">
+      {{ user_form.as_p }}
+    </div>
+    <div class="profile-form">
+      {{ profile_form.username.label_tag }}
+      {{ profile_form.username }}
+      {% if user_form.errors.username %}
+        <p style="color: red;">{{ user_form.errors.username }}</p>
+      {% endif %}
+      <br>
+      {{ profile_form.email.label_tag }}
+      {{ profile_form.email }}
+      <br>
+      {{ profile_form.avatar.label_tag }}
+      {{ profile_form.avatar }}
+    </div>
+    <button type="submit" class="btn-outline-light mt-4">Save</button>
+    <a style="font-weight: 600;" href="{% url 'profile_details' %}">go back to your profile</a>
+  </form>
+
+</main>
+<style>
+    /* Estilo para la imagen del avatar */
+    .avatar-preview {
+      width: 150px; /* Ancho deseado */
+      height: 150px; /* Alto deseado */
+      object-fit: cover; /* Escalar la imagen para que cubra el contenedor manteniendo las proporciones */
+      border-radius: 50%; /* Para que la imagen se vea redondeada */
+    }
+  </style>
+{% endblock %}
+
